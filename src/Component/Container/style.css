@@ -1,0 +1,15 @@
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1920px !important;
+    }
+}
+
+@media (max-width: 1368px) {
+    .container {
+        max-width: 1368px !important;
+    }
+}
+
+.custom-header {
+    padding-top: 100px;
+}
