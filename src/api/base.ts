@@ -5,14 +5,14 @@ class ApiBase {
 
   constructor() {
     this.axios = axios
-    this.axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com/';
+    this.axios.defaults.baseURL = 'https://api.openweathermap.org/data/2.5/';
     this.axios.interceptors.response.use(
       (response) => response.data,
       (error) => Promise.reject(error)
     )
   }
     
-  public async get(path: string, config?: AxiosRequestConfig) {
+  public async get<T>(path: string, config?: AxiosRequestConfig) {
     return await this.axios.get(path, config) as any
   }
   

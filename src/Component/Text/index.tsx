@@ -67,32 +67,10 @@ const Heading: React.FC<HeadingProps> = (props) => {
   }
 }
 
-interface LinkProps extends TextBaseProps {
-  to: string
-}
-
-const Link: React.FC<LinkProps> = (props) => {
-  const className = classNames(
-    props.className,
-    'cursor-pointer',
-    props.color === 'white' ? 'text-white' : 'text-black'
-  )
-
-  const handleOnClick = () => {
-    if (props.onClick) {
-      props.onClick()
-    }
-  }
-
-  return (
-    <RouterLink to={props.to} className={className} style={props.style} onClick={handleOnClick}>{props.children}</RouterLink>
-  )
-}
 
 const Text = {
   Paragraph,
   Heading,
-  Link
 }
 
 export default Text

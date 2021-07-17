@@ -13,7 +13,7 @@ interface props {
 
 const Container:React.FC<props> = (props) => {
 
-const containerClass = classNames('container custom-header', props.className)
+const containerClass = classNames('container', props.className)
 
     return (
         <div>

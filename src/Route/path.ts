@@ -1,8 +1,6 @@
 const ROUTE_PATH = {
 	HOME: '/',
-	ALBUM: '/album',
-    PHOTOS: '/photos',
-    USERS: '/users'
+	Search: '/search',
 }
 
 export default ROUTE_PATH
