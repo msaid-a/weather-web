@@ -2,6 +2,7 @@ import api from '../api'
 import useSWR from "swr";
 
 export const useGetCurrentLocation = (langtitude: number, longtitude: number) => {
+
     const {data, error, isValidating} = useSWR( 'current-location', async () =>  {
         const respone = await api.weatherApi.getCurrentLocation(langtitude, longtitude)
         return respone

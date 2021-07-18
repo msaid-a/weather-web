@@ -11,7 +11,11 @@ const Layout: React.FC<props> = (props) => {
 
   const searchData = (e: any) => {
     if (e.keyCode === 13) {
-      history.push(`/search?q=${e.target.value}`);
+      if(!e.target.value) {
+        history.push("/")
+      }else {
+        history.push(`/search?q=${e.target.value}`);
+      }
     }
   };
   return (

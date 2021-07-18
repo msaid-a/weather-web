@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Text, NoData } from "../../Component";
-import DailyWheater from "./DailyWheater";
+import DailyWheater from "../Reusable/DailyWheater";
 import { useGetCurrentLocation, useGetCityLocation } from "../../Services/weather.services";
 import moment from "moment";
 import MediaQuery from "react-responsive";

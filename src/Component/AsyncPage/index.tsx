@@ -2,7 +2,8 @@ import React from 'react'
 import {Loading, ErrorBoundary} from '..'
 interface AsyncPageProps {
   page: string
-  fallback?: JSX.Element
+  fallback?: JSX.Element,
+  location?: {latitude: number, longtitude: number}
 }
 
 const AsyncPage: React.FC<AsyncPageProps> = props => {
@@ -11,11 +12,12 @@ const AsyncPage: React.FC<AsyncPageProps> = props => {
   const fallback = (
     <Loading />
   )
+  
 
   return (
     <ErrorBoundary>
       <React.Suspense fallback={fallback}>
-        <Component />
+        <Component location={props.location} />
       </React.Suspense>
     </ErrorBoundary>
   )

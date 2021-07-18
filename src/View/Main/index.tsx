@@ -1,26 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Text } from "../../Component";
-import DailyWheater from "./DailyWheater";
+import DailyWheater from "../Reusable/DailyWheater";
 import { useGetCurrentLocation } from "../../Services/weather.services";
 import moment from "moment";
 import MediaQuery from "react-responsive";
 
-const Main: React.FC = () => {
-  const [latitude, setLatitude] = useState<number>(0);
-  const [longtitude, setLongtitude] = useState<number>(0);
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition((success) => {
-      setLatitude(success.coords.latitude);
-      setLongtitude(success.coords.longitude);
-    });
-  }, []);
+interface props {
+  location: {latitude: number, longtitude: number}
+}
 
+const Main: React.FC<props> = (props) => {
   const {
     data,
     error,
     isValidating: loading,
-  } = useGetCurrentLocation(latitude, longtitude);
-  console.log(data, "zxczxc");
+  } = useGetCurrentLocation(props.location.latitude, props.location.longtitude);
+ 
+    
   return (
     <Container loading={loading}>
       <Container className="current-info">

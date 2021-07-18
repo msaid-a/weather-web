@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import "./static/styles/index.scss";
@@ -18,7 +18,17 @@ const ROUTES = [
   { path: Search, exact: true, page: "Search" },
 ];
 
+
 function App() {
+
+  const [location, setLocation] = useState<any>({})
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(success => {
+      setLocation({latitude : success.coords.latitude, longtitude: success.coords.longitude})
+    })
+  }, [])
+
   return (
     <Router>
       <Layout>
@@ -28,7 +38,7 @@ function App() {
               key={i}
               path={route.path}
               exact={route.exact}
-              render={() => <AsyncPage page={route.page} />}
+              render={() => <AsyncPage page={route.page} location={route.page === "Main" ? location : ''} />}
             />
           ))}
           <Route component={() => <p>Not Found</p>} />

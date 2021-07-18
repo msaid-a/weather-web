@@ -65,18 +65,6 @@
     overflow-y: hidden;
 }
 
-.future-forecast .today{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    padding:15px;
-    padding-right: 40px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.2)
-}
-
 
 .future-forecast .weather-forecast{
     display: flex;
@@ -118,9 +106,6 @@
         overflow-y: scroll;
     }
 
-    .future-forecast .today .temp{
-        font-size: 16px;
-    }
 
     .date-container .time{
         font-size: 50px;
