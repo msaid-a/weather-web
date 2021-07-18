@@ -30,7 +30,7 @@
   "scripts": {
     "build:style": "tailwind build src/static/styles/index.css -o src/static/styles/tailwind.css",
     "start": "npm run build:style && react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run build:style && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
