@@ -31,19 +31,19 @@ function App() {
 
   return (
     <Router>
-      <Layout>
-        <Switch>
-          {ROUTES.map((route, i) => (
-            <Route
-              key={i}
-              path={route.path}
-              exact={route.exact}
-              render={() => <AsyncPage page={route.page} location={route.page === "Main" ? location : ''} />}
-            />
-          ))}
-          <Route component={() => <p>Not Found</p>} />
-        </Switch>
-      </Layout>
+        <Layout>
+          <Switch>
+            {ROUTES.map((route, i) => (
+              <Route
+                key={i}
+                path={route.path}
+                exact={route.exact}
+                render={() => <AsyncPage page={route.page} location={route.page === "Main" ? location : ''} />}
+              />
+            ))}
+            <Route component={() => <p>Not Found</p>} />
+          </Switch>
+        </Layout>
     </Router>
   );
 }
